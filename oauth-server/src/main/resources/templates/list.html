@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Custom consent page - Consent required</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+    </style>
+	<script>
+		function cancelConsent() {
+			document.consent_form.reset();
+			document.consent_form.submit();
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+    <div style="color: coral" > <h1>OAUTH2 授权历史</h1></div>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>id</th>
+            <th>registeredClientId</th>
+            <th>principalName</th>
+            <th>authorizationGrantType</th>
+            <th>state</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="auth: ${authorizationBeans}">
+            <td th:text="${auth.id}"></td>
+            <td  th:text="${auth.registered_client_id}"></td>
+            <td  th:text="${auth.principal_name}"></td>
+            <td  th:text="${auth.authorization_grant_type}"></td>
+            <td  th:text="${auth.state}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
