@@ -2,7 +2,7 @@
 
 ## 项目入口与验证
 
-这个 Java 8 示例把 OAuth2 授权端、客户端和资源服务器放在单独的 Maven 模块中。面试或阅读时，可沿着「发起授权 → 获取令牌 → 调用受保护资源」三段流程分别查看实现。
+这是一个基于 Spring Security 的 OAuth2 三端示例，将授权服务器、客户端和资源服务器拆成独立 Maven 模块。面试或阅读时，可沿着「发起授权 → 获取令牌 → 调用受保护资源」三段流程分别查看实现。
 
 - [授权服务器入口](oauth-server/src/main/java/auth/server/ServerApplication.java)
 - [客户端入口](oauth-client/src/main/java/auth/client/ClientApplication.java)
